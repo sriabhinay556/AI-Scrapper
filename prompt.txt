@@ -1,0 +1,31 @@
+
+    You are a website scraper script creator and you have just scraped the following content from a website. I will provide the scrapped HTML which is also reduced in size in the form of a string as HTML_DATA (it only has the body of the HTML). 
+
+    Write the code in python for extracting the information requested by the user question.
+
+    
+    Do not dump the entire HTML in the output python code. Only include the necessary data which is required for the user question. 
+ 
+    
+    The context is provided to you which is a search URL, you can know the context of the query by looking at the search query and parameters in it.
+
+
+    The output should be just in python code without any comment and should implement the main. 
+
+    
+    Returned python code should be able to run without any error. No comments are required in the code. Do not wrap the output in comments or markdown like ```python. 
+
+
+    Return type should be a str and Please return the ouput string wrapped in triple quotes.
+
+    
+    Do not use any imports in the output python code, like json or any other imports. You can use print function to print the output or any other function which doesnt require any imports.
+
+
+    USER QUESTION: list all the open issues which has stars less than 5K
+    CONTEXT: https://goodfirstissue.dev/language/lua
+    SCHEMA INSTRUCTIONS: json 
+    HTML_TITLE: Lua | Good First Issue
+    LINKS_DATA_IN_HTML: ['https://goodfirstissue.dev/', 'https://goodfirstissue.dev/language/python', 'https://goodfirstissue.dev/language/go', 'https://goodfirstissue.dev/language/typescript', 'https://goodfirstissue.dev/language/javascript', 'https://goodfirstissue.dev/language/cplusplus', 'https://goodfirstissue.dev/language/java', 'https://goodfirstissue.dev/language/csharp', 'https://goodfirstissue.dev/language/rust', 'https://goodfirstissue.dev/language/c', 'https://goodfirstissue.dev/language/php', 'https://goodfirstissue.dev/language/html', 'https://goodfirstissue.dev/language/ruby', 'https://goodfirstissue.dev/language/dart', 'https://goodfirstissue.dev/language/scala', 'https://goodfirstissue.dev/language/kotlin', 'https://goodfirstissue.dev/language/lua', 'https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project', 'https://deepsource.com?ref=gfi', 'https://github.com/apache/apisix', 'https://github.com/CorsixTH/CorsixTH', 'https://github.com/tarantool/tarantool']
+    HTML_DATA: <body><div id="__nuxt"><div><header><nav><a href="/"><img src="/_nuxt/gfi-logo-white.c30e7ffd.svg"/></a><span><span>/</span><span>Lua</span></span></nav></header><main><section><section><div><h3>About</h3><p>Good First Issue cur</p></div><div><h3>Browse by language</h3><div><a href="/language/python">Python<span>× 71</span></a><a href="/language/go">Go<span>× 48</span></a><a href="/language/typescript">TypeScript<span>× 45</span></a><a href="/language/javascript">JavaScript<span>× 45</span></a><a href="/language/cplusplus">C++<span>× 30</span></a><a href="/language/java">Java<span>× 24</span></a><a href="/language/csharp">C#<span>× 18</span></a><a href="/language/rust">Rust<span>× 17</span></a><a href="/language/c">C<span>× 11</span></a><a href="/language/php">PHP<span>× 10</span></a><a href="/language/html">HTML<span>× 7</span></a><a href="/language/ruby">Ruby<span>× 6</span></a><a href="/language/dart">Dart<span>× 4</span></a><a href="/language/scala">Scala<span>× 3</span></a><a href="/language/kotlin">Kotlin<span>× 3</span></a><a href="/language/lua">Lua<span>× 3</span></a></div></div><div><a href="https://github.com/deepsourcelabs/good-first-issue#adding-a-new-project"><svg><path></path></svg><span>Add your project</span></a></div><div><a href="https://deepsource.com?ref=gfi"><svg><path></path></svg><span>A<span>DeepSource</span>initative</span></a></div></section><div><div id="repo-180481986"><div><div><a href="https://github.com/apache/apisix">apache / apisix</a><span></span><span>10 issues</span></div><div>The Cloud-Native API</div><div><div><span>lang:</span>Lua</div><div><span>stars:</span>14.43K</div><div><span>last activity:</span><span>3 days ago</span></div></div></div></div><div id="repo-12363387"><div><div><a href="https://github.com/CorsixTH/CorsixTH">CorsixTH / CorsixTH</a><span></span><span>10 issues</span></div><div>Open source clone of</div><div><div><span>lang:</span>Lua</div><div><span>stars:</span>4.02K</div><div><span>last activity:</span><span>2 days ago</span></div></div></div></div><div id="repo-911980"><div><div><a href="https://github.com/tarantool/tarantool">tarantool / tarantoo</a><span></span><span>10 issues</span></div><div>Get your data in RAM</div><div><div><span>lang:</span>Lua</div><div><span>stars:</span>3.4K</div><div><span>last activity:</span><span>3 days ago</span></div></div></div></div></div></section></main></div></div></body>
+    

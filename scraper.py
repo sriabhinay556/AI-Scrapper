@@ -3,6 +3,7 @@ from playwright.async_api import async_playwright
 from typing import Optional, List
 from requests.exceptions import RequestException
 from fp.fp import FreeProxy
+import requests
 # Enable proxy settings if needed
 def get_proxy() -> Optional[dict]:
     try:
@@ -55,7 +56,8 @@ async def scrape_website(url: str, use_proxy: bool = False) -> List[Optional[str
         finally:
             await browser.close()
     #print('html_content:', html_content)
-    file_path = 'html_content.html'
-    with open(file_path, 'w', encoding='utf-8') as file:
-        file.write(html_content)
-    return [html_content, status_code]
+    # file_path = 'html_content.html'
+    # with open(file_path, 'w', encoding='utf-8') as file:
+    #     file.write(html_content)
+    
+    return {"html_content": html_content, "status_code": status_code}

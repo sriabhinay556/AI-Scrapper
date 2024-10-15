@@ -1,25 +1,51 @@
-import requests
-from fp.fp import FreeProxy
-from requests.exceptions import RequestException, Timeout, ProxyError, ConnectionError
-from html_reducer import cleanup_html, reduce_html  # Import the parsing function
-from scraper import scrape_website  # Import the scraping function from scrape.py
 from ai_scraper import ai_scraper
 import asyncio
+import os
+from dotenv import load_dotenv  # Import dotenv
 
-
+# Load environment variables from the .env file
+load_dotenv()
 
 async def main():
   # call the ai_scraper function
-  search_url = "https://sneakers-adda-v2.vercel.app/sneakers/Jordan%201"
-  user_question = "What are the top 5 job titles and their respective companies?"
-  gpt_model = "gpt-3.5-turbo"
-  openai_api_key = "your_openai_api_key_here"
-  schema_instructions = "json"  
-  parser_logic = ai_scraper(search_url, user_question, gpt_model, openai_api_key, schema_instructions);
-  print(parser_logic)
-  #save to file
-  with open('parser_logic.txt', 'w') as file:
-    file.write(parser_logic)
+  url = input("Enter the URL to scrape: ")
+  prompt = input("Enter the prompt: ")
+  response_from_ai_scraper = await ai_scraper(
+     url, # search_url
+     prompt, # user_question
+     "gpt-3.5-turbo", # gpt_model
+     os.environ.get("OPENAI_API_KEY"), # openai_api_key 
+     "json" # schema_instructions
+  );
+  if not response_from_ai_scraper[1]=="":
+    return response_from_ai_scraper[1]
+  print("response from ai_scraper... ")
+  # first_line = parser_logic.split('\n')[0]
+  # last_line = parser_logic.split('\n')[-1]
+  #print('first_line: ', first_line, 'last_line: ', last_line)
+  # new_str =""
+  # if first_line == "'''" and last_line == "'''":
+  #     # print("inside of main")
+  #     #Split the string into lines and copy everything from the second line onward
+  #     lines = parser_logic.splitlines()
 
+  #     # Join lines starting from the second line (index 2)
+  #     new_str = "\n".join(lines[1:])
+
+  #     lines = new_str.splitlines()
+
+  #     new_str = "\n".join(lines[:-1])
+      
+  #     #print(new_str)
+
+  #     exec(new_str)
+  #     return
+    # code to execute the parser_logic
+  # read from parser_logic.py
+  with open("parser_logic.py", "w") as file:
+    file.write(response_from_ai_scraper[0])
+  with open('parser_logic.py', 'r') as file:
+      parser_logic = file.read()
+  exec(parser_logic)
 if __name__ == "__main__":
     asyncio.run(main())

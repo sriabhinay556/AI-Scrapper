@@ -49,12 +49,12 @@ def cleanup_html(html_content: str, base_url: str) -> str:
     body_content = soup.find('body')
     if body_content:
         minimized_body = minify(str(body_content))
-        return title, minimized_body, link_urls, image_urls
+        return {"title": title, "minimized_body": minimized_body, "link_urls": link_urls, "image_urls": image_urls}
 
     else:
         raise ValueError(f"""No HTML body content found, please try setting the 'headless'
                          flag to False in the graph configuration. HTML content: {html_content}""")
-
+   
 
 def minify_html(html):
     """
